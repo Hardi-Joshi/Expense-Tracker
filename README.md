@@ -1,7 +1,8 @@
 # Expense-Tracker
-`
+```c
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define MAX_EXPENSES 100
 struct Expense {
 char description[100];
@@ -16,7 +17,6 @@ void ClearData() {
 memset(expenses, 0, sizeof(expenses));
 expenseCount = 0;
 previousMonthsSum = 0;
-}
 }
 void EnterData() {
 if (expenseCount < MAX_EXPENSES) {
@@ -62,8 +62,7 @@ previousMonthsSum += expenses[i].amount;
 if (currentMonthSum > previousMonthsSum) {
 printf("This month's expenses are higher than the previous month.\n");
 } else if (currentMonthSum < previousMonthsSum) {
-printf("Congratulations! You spent less this month compared to the previous
-month.\n");
+printf("Congratulations! You spent less this month compared to the previous month.\n");
 } else {
 printf("This month's expenses are the same as the previous month.\n");
 }
@@ -80,8 +79,7 @@ int choice;
 SetLimit();
 while (getchar() != '\n');
 while (1) {
-printf("\nEnter your choice: 1) Enter data 2) Generate report 3) Change expense
-limit 4) Clear data 5) Exit\n");
+printf("\nEnter your choice: 1) Enter data 2) Generate report 3) Change expense limit 4) Clear data 5) Exit\n");
 scanf("%d", &choice);
 while (getchar() != '\n');
 switch (choice) {
